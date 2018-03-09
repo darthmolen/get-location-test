@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native'
 
-const LocationView = ({text}) => (
+const LocationView = ({locationData}) => (
     <View style={style.container}>
-        <Text>{text}</Text>
+        <Text>{locationData}</Text>
     </View>
 )

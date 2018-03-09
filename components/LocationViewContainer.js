@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-//import LocationView from '../components/LocationView';
+import LocationView from '../components/LocationView';
 import { Text } from 'react-native';
 
 export default class LocationViewContainer extends Component {
-  state = {
-    location: null,
-    errorMessage: null
-  };      
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      location: null,
+      errorMessage: null
+    }
+  }     
 
   componentWillMount() {
       if (Platform.OS === 'android' && !Constants.isDevice) {
@@ -38,7 +42,7 @@ export default class LocationViewContainer extends Component {
       text = JSON.stringify(this.state.location);
     }
 
-    return (<Text>This is a test</Text>);
+    return (<LocationView locationData={text}></LocationView>);
   }
 
 }
